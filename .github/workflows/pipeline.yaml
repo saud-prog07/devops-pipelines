@@ -1,25 +1,25 @@
-name : DevOps Pipelines
+
+name: DevOps Pipelines
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-     -name: Checkout code
-      uses: actions/checkout@v5 
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-     -name: Set up Node.js
-       uses: actions/setup-node@v3
-         with:
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
           node-version: '16'
 
-
-     -name: Install dependencies
+      - name: Install dependencies
         run: npm install
 
-     -name: Run tests
-        run: npm test 
+      - name: Run tests
+        run: npm test
